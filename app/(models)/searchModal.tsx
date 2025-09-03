@@ -41,19 +41,33 @@ const searchModal = () => {
     error,
     loading: transactionsLoading,
   } = useFetchData<TransactionType>("transactions", constraints);
-  const filteredTransactions = allTransactions.filter((item) => {
-    if (search.length > 1) {
-      if (
-        item.category?.toLowerCase()?.includes(search?.toLowerCase()) ||
-        item.type?.toLowerCase()?.includes(search?.toLowerCase()) ||
-        item.description?.toLowerCase()?.includes(search?.toLowerCase())
-      ) {
-        return true;
-      }
-      return false;
-    }
-  });
-  console.log("all transactions", filteredTransactions);
+  // const filteredTransactions = allTransactions.filter((item) => {
+  //   if (search.length > 1) {
+  //     if (
+  //       item.category?.toLowerCase()?.includes(search?.toLowerCase()) ||
+  //       item.type?.toLowerCase()?.includes(search?.toLowerCase()) ||
+  //       item.description?.toLowerCase()?.includes(search?.toLowerCase())
+  //     ) {
+  //       return true;
+  //     }
+  //     return false;
+  //   }
+  // });
+  // console.log("all transactions", filteredTransactions);
+
+  const filteredTransactions =
+  search.length > 1
+    ? allTransactions.filter((item) => {
+        if (
+          item.category?.toLowerCase()?.includes(search?.toLowerCase()) ||
+          item.type?.toLowerCase()?.includes(search?.toLowerCase()) ||
+          item.description?.toLowerCase()?.includes(search?.toLowerCase())
+        ) {
+          return true;
+        }
+        return false;
+      })
+    : allTransactions; // 👈 show all by default
 
   return (
     <ModalWrapper style={{ backgroundColor: colors.neutral900 }}>

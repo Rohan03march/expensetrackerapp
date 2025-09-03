@@ -225,7 +225,7 @@ const TransactionModal = () => {
                 <Dropdown
                 style = {styles.dropdownContainer}
                 activeColor = {colors.neutral700}
-               placeholderStyle = {styles.dropdownPlaceholder}
+                placeholderStyle = {styles.dropdownPlaceholder}
                 selectedTextStyle = {styles.dropdownSelectedText}
                 iconStyle = {styles.dropdownIcon}
                 data={Object.values(expenseCategories)}

@@ -19,7 +19,7 @@ const Home = () => {
   const { user } = useAuth();
   const constraints = [
     where("uid", "==", user?.uid),
-    orderBy("date", "desc"),
+    orderBy("date", 'desc'),
     limit(30),
   ];
 

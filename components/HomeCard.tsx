@@ -39,10 +39,6 @@ const HomeCard = () => {
                 <Typo color={colors.neutral800} size={17} fontWeight={'500'}>
                     Total Balance
                 </Typo>
-                <Icons.DotsThreeOutline
-                size={verticalScale(23)}
-                color={colors.black}
-                weight='fill'/>
             </View>
             <Typo color={colors.black} size={30} fontWeight={'bold'}>₹ {walletLoading ? "---": getTotals()?.balance?.toFixed(2)}</Typo>
         </View>
